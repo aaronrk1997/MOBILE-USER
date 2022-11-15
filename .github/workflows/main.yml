@@ -21,7 +21,6 @@ jobs:
           mongodb-version: 4.2
 
       - name: Build, test and package project
-        env:
         run: mvn package -Dmaven.test.skip=true
 
       - name: Docker login
