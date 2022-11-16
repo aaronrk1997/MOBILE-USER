@@ -33,8 +33,8 @@ public class UserControllerUnitTests {
     @MockBean
     private UserRepository userRepository;
 
-    private User user1 = new User("User", "One", new Date());
-    private User user2 = new User("User", "Two", new Date());
+    private User user1 = new User("User1", "One", new Date());
+    private User user2 = new User("User2", "Two", new Date());
 
     private List<User> allUsers = Arrays.asList(user1, user2);
 
