@@ -77,7 +77,7 @@ public class UserControllerUnitTests {
 
     @Test
     public void updateUser() throws Exception {
-        given(userRepository.save(user1)).willReturn(user1);
+        given(userRepository.save(user1));
 
         mockMvc.perform(put("/users/{name}", user1.getName())
                 .contentType(MediaType.APPLICATION_JSON)
