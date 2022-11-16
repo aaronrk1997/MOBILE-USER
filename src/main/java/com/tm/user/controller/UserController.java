@@ -34,8 +34,9 @@ public class UserController {
     public User updateUser(@PathVariable(value = "name") String name, @RequestBody User userDetails) {
         User user = userRepository.findByName(name);
         user.setName(userDetails.getName());
-        user.setAge(userDetails.getAge());
-        user.setSalary(userDetails.getSalary());
+        user.setFirstName(userDetails.getFirstName());
+        user.setDateOfBirth(userDetails.getDateOfBirth());
+
         User updatedUser = userRepository.save(user);
         return updatedUser;
     }
