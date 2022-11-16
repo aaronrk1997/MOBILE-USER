@@ -25,7 +25,7 @@ public class UserController {
         return userRepository.findByName(name);
     }
 
-    @PostMapping("/users")
+    @PostMapping(value = "/users", produces = "application/json")
     @ResponseBody
     public User createUser(@RequestBody User user) {
         return userRepository.save(user);
