@@ -59,10 +59,8 @@ public class UserControllerIntegrationTests {
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].name", is(user1.getName())))
                 .andExpect(jsonPath("$[0].firstName", is(user1.getFirstName())))
-                .andExpect(jsonPath("$[0].dateOfBirth", is(user1.getDateOfBirth())))
                 .andExpect(jsonPath("$[1].name", is(user2.getName())))
                 .andExpect(jsonPath("$[1].firstName", is(user2.getFirstName())))
-                .andExpect(jsonPath("$[1].dateOfBirth", is(user2.getDateOfBirth())));
     }
 
     @Test
@@ -87,7 +85,6 @@ public class UserControllerIntegrationTests {
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.name", is(user1.getName())))
                 .andExpect(jsonPath("$.firstName", is(user1.getFirstName())))
-                .andExpect(jsonPath("$.dateOfBirth", is(user1.getDateOfBirth())));
     }
 
     @Test
@@ -100,7 +97,6 @@ public class UserControllerIntegrationTests {
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.name", is(user1.getName())))
                 .andExpect(jsonPath("$.firstName", is(user1.getFirstName())))
-                .andExpect(jsonPath("$.dateOfBirth", is(user1.getDateOfBirth())));
     }
 
     @Test
