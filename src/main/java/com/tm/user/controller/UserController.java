@@ -22,7 +22,7 @@ public class UserController {
 
     @GetMapping("/users/{name}")
     public List<User> getUserByName(@PathVariable(value = "name") String name) {
-        return userRepository.findByNameContains(name);
+        return userRepository.findByName(name);
     }
 
     @PostMapping("/users")
