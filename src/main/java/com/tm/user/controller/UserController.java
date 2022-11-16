@@ -29,5 +29,22 @@ public class UserController {
     public User createUser(@RequestBody User user) {
         return userRepository.save(user);
     }
+
+    @PutMapping("/users/{name}")
+    public User updateUser(@PathVariable(value = "name") String name, @RequestBody User userDetails) {
+        User user = userRepository.findByName(name);
+        user.setName(userDetails.getName());
+        user.setAge(userDetails.getAge());
+        user.setSalary(userDetails.getSalary());
+        User updatedUser = userRepository.save(user);
+        return updatedUser;
+    }
+
+    @DeleteMapping("/users/{name}")
+    public ResponseEntity<?> deleteUser(@PathVariable(value = "name") String name) {
+        User user = userRepository.findByName(name);
+        userRepository.delete(user);
+        return ResponseEntity.ok().build();
+    }
     
 }
