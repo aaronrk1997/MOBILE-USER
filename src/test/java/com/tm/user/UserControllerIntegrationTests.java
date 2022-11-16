@@ -93,7 +93,7 @@ public class UserControllerIntegrationTests {
     @Test
     public void updateUser() throws Exception {
 
-        mockMvc.perform(put("/users/{name}", user1.getName())
+        mockMvc.perform(put("/users/{name}", user2.getName())
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(user1)))
                 .andExpect(status().isOk())
