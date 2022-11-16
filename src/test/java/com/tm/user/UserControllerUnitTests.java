@@ -75,7 +75,7 @@ public class UserControllerUnitTests {
                 .andExpect(status().isOk());
     }
 
-    @Test
+/*     @Test
     public void updateUser() throws Exception {
         given(userRepository.save(user1)).willReturn(user1);
 
@@ -83,7 +83,7 @@ public class UserControllerUnitTests {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(user1)))
                 .andExpect(status().isOk());
-    }
+    } */
 
     @Test
     public void deleteUser() throws Exception {
