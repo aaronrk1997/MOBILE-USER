@@ -72,10 +72,7 @@ public class UserControllerUnitTests {
         mockMvc.perform(post("/users")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(user1)))
-                .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.name", is(user1.getName())))
-                .andExpect(jsonPath("$.firstName", is(user1.getFirstName())));
+                .andExpect(status().isOk());
     }
 
     @Test
