@@ -28,7 +28,8 @@ public class UserController {
     @PostMapping(value = "/users", produces = "application/json")
     @ResponseBody
     public User createUser(@RequestBody User user) {
-        return userRepository.save(user);
+        User tempUser = userRepository.save(user);
+        return tempUser;
     }
 
     @PutMapping("/users/{name}")
