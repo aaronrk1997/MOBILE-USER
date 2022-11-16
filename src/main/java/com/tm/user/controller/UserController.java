@@ -26,11 +26,13 @@ public class UserController {
     }
 
     @PostMapping("/users")
+    @ResponseBody
     public User createUser(@RequestBody User user) {
         return userRepository.save(user);
     }
 
     @PutMapping("/users/{name}")
+    @ResponseBody
     public User updateUser(@PathVariable(value = "name") String name, @RequestBody User userDetails) {
         User user = userRepository.findByName(name);
         user.setName(userDetails.getName());
@@ -42,6 +44,7 @@ public class UserController {
     }
 
     @DeleteMapping("/users/{name}")
+    @ResponseBody
     public ResponseEntity<?> deleteUser(@PathVariable(value = "name") String name) {
         User user = userRepository.findByName(name);
         userRepository.delete(user);
